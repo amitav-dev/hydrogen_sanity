@@ -1,0 +1,12 @@
+#Sanity+Hydrogen
+sanity-and-hydrogen/build
+sanity-and-hydrogen/node_modules
+sanity-and-hydrogen/bin
+sanity-and-hydrogen/*.d.ts
+sanity-and-hydrogen/dist
+sanity-and-hydrogen/.eslintignore
+sanity-and-hydrogen/.env
+
+#Sanity+Shopify
+sanity-and-shopify/node_modulessa
+sanity-and-shopify/.gitignore
