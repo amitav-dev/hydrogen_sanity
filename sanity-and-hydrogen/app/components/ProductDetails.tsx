@@ -1,21 +1,20 @@
+import {PortableText} from '@portabletext/react';
 import {Link} from '@remix-run/react';
 
 interface Props {
   product: any;
+  page: any;
 }
-const ProductDetails = ({product}: Props) => {
+const ProductDetails = ({product, page}: Props) => {
   return (
-    <div className="border p-3">
+    <div className="mx-auto p-12 prose prose-a:text-blue-500">
+      <h1 className="text-3xl font-bold">{product.title}</h1>
       <img
-        src={product.images.nodes[0].url}
-        alt={product.images.nodes[0].altText ?? 'alt'}
-        width={'100'}
-        height={'50'}
-        className="w-full h-48 object-cover"
+        alt={product.title}
+        src={page.image}
+        className="size-32 not-prose mb-6 mr-6 object-cover float-left rounded-xl"
       />
-      <hr />
-      <br />
-      <p className="text-gray-700">{product.title}</p>
+      {page?.body?.length > 0 ? <PortableText value={page.body} /> : null}
       {/* <p className="text-gray-700">{product.price}</p> */}
     </div>
   );

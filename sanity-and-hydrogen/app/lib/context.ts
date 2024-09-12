@@ -38,6 +38,8 @@ export async function createAppLoadContext(
 
   return {
     ...hydrogenContext,
+    cache,
+    waitUntil
     // declare additional Remix loader context
   };
 }
