@@ -16,6 +16,7 @@ export async function loader({
         product(handle: $handle) { 
           id 
         title 
+        vendor
         images(first: 1) {
             nodes {
                     id
@@ -44,11 +45,9 @@ export async function loader({
 export default function Page() {
   const {product, initial} = useLoaderData<typeof loader>();
   const page = initial.data;
-  console.log(initial);
-  console.log(product);
 
   return (
-    <div className="mx-auto p-12 prose prose-a:text-blue-500">
+    <div className="mx-auto p-12 max-w-screen-lg">
       <ProductDetails key={product.id} product={product} page={page} />
 
       <Link to="/products">&larr; Back to All Products</Link>
@@ -67,4 +66,3 @@ export default function Page() {
     // </div>
   );
 }
-
